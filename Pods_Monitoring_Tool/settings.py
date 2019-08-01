@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'podswebappdb',
         'USER': 'podsdbserver',
         'PASSWORD': 'dbaccess123,.',
-        'HOST': 'podswebappserver.database.windows.net',
+        'HOST': 'podswebappwinserver.database.windows.net',
         'PORT': '1433'
     }
 }
