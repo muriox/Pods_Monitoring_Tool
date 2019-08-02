@@ -71,29 +71,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pods_monitoring_tool_db',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': ''
-    }
-}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'podswebappwindb',
-#         'USER': 'podsdbserver@podswebappmysqlserver',
-#         'PASSWORD': 'dbaccess123,.',
-#         'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
-#         'PORT': '3306',
-#         'OPTIONS': {
-#             'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
-#         }
+#         'NAME': 'pods_monitoring_tool_db',
+#         'USER': 'root',
+#         'PASSWORD': '123456',
+#         'HOST': 'localhost',
+#         'PORT': ''
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'podswebappwindb',
+        'USER': 'podsdbserver@podswebappmysqlserver',
+        'PASSWORD': 'dbaccess123,.',
+        'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
