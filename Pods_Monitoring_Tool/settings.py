@@ -25,7 +25,7 @@ SECRET_KEY = 'm$z@tln#a#_!tc101+^b-jk6f_w((3n**95@+^i_d$b%_qrlld'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'podswebapp.azurewebsites.net']
+ALLOWED_HOSTS = ['*', 'podswebapp.azurewebsites.net', 'https://podswebappwin.azurewebsites.net']
 
 
 # Application definition
