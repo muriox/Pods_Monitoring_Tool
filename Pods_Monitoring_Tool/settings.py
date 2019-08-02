@@ -81,10 +81,11 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 #         'PORT': ''
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'podswebappwindb',
+        'NAME': 'podswebappdb',
         'USER': 'podsdbserver@podswebappmysqlserver',
         'PASSWORD': 'dbaccess123,.',
         'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
