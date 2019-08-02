@@ -75,20 +75,47 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'podswebappdb',
+#         'USER': 'podsdbserver@podswebappwinserver',
+#         'PASSWORD': 'dbaccess123,.',
+#         'HOST': 'podswebappwinserver.database.windows.net',
+#         'PORT': '1433',
+#         'DRIVER': {'ODBC Driver 13 for SQL Server'},
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'podswebappdb',
-        'USER': 'podsdbserver@podswebappwinserver',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'podswebappwindb',
+        'USER': 'podsdbserver@podswebappmysqlserver',
         'PASSWORD': 'dbaccess123,.',
-        'HOST': 'podswebappwinserver.database.windows.net',
-        'PORT': '1433',
+        'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
+        'PORT': '3306',
         'OPTIONS': {
-            'driver': 'ODBC Driver 13 for SQL Server',
-            'MARS_Connection': 'True',
-        },
+            'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
+        }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'podswebappdb',
+#         'USER': 'podsdbserver@podswebappwinserver',
+#         'PASSWORD': 'dbaccess123,.',
+#         'HOST': 'podswebappwinserver.database.windows.net',
+#         'PORT': '1433',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 13 for SQL Server',
+#             'MARS_Connection': 'True',
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
