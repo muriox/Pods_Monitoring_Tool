@@ -71,20 +71,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'podswebappwindb',
-        'USER': 'podsdbserver@podswebappmysqlserver',
-        'PASSWORD': 'dbaccess123,.',
-        'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
-        }
+        'NAME': 'pods_monitoring_tool_db',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'podswebappwindb',
+#         'USER': 'podsdbserver@podswebappmysqlserver',
+#         'PASSWORD': 'dbaccess123,.',
+#         'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
+#         }
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -121,10 +130,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-STATIC_ROOT = os.path.join('D:/home/site/wwwroot/static', "static")
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join('D:/home/site/wwwroot/static', "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # NOTE: The URL path is renamed to hide the actual path to static files
-STATIC_URL = '/uadsshAFSVAasb/'
+STATIC_URL = '/static/'
+# STATIC_URL = '/uadsshAFSVAasb/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'contents/')
 MEDIA_URL = "/contents/"
