@@ -25,7 +25,7 @@ SECRET_KEY = 'm$z@tln#a#_!tc101+^b-jk6f_w((3n**95@+^i_d$b%_qrlld'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'podswebapp.azurewebsites.net']
 
 
 # Application definition
@@ -72,22 +72,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'podswebappdb',
-#         'USER': 'podsdbserver@podswebappwinserver',
-#         'PASSWORD': 'dbaccess123,.',
-#         'HOST': 'podswebappwinserver.database.windows.net',
-#         'PORT': '1433',
-#         'DRIVER': {'ODBC Driver 13 for SQL Server'},
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -101,21 +85,6 @@ DATABASES = {
         }
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'podswebappdb',
-#         'USER': 'podsdbserver@podswebappwinserver',
-#         'PASSWORD': 'dbaccess123,.',
-#         'HOST': 'podswebappwinserver.database.windows.net',
-#         'PORT': '1433',
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 13 for SQL Server',
-#             'MARS_Connection': 'True',
-#         },
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
