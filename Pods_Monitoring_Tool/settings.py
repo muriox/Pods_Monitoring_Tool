@@ -133,8 +133,8 @@ USE_TZ = True
 # STATIC_ROOT = os.path.join('D:/home/site/wwwroot/static', "static")
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # NOTE: The URL path is renamed to hide the actual path to static files
-STATIC_URL = '/static/'
-# STATIC_URL = '/uadsshAFSVAasb/'
+# STATIC_URL = '/static/'
+STATIC_URL = '/uadsshAFSVAasb/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'contents/')
 MEDIA_URL = "/contents/"

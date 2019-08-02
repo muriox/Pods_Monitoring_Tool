@@ -17,8 +17,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/monitoringTool/css/3rdparty/util.css">
-	<link rel="stylesheet" type="text/css" href="/static/monitoringTool/css/3rdparty/main.css">
+	<link rel="stylesheet" type="text/css" href="/uadsshAFSVAasb/monitoringTool/css/3rdparty/util.css">
+	<link rel="stylesheet" type="text/css" href="/uadsshAFSVAasb/monitoringTool/css/3rdparty/main.css">
 <!--===============================================================================================-->
 {% endblock %}
 
@@ -27,14 +27,14 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-			
+
 				<!--- LOGIN -->
 				<form id="podsLogin" class="login100-form validate-form" action="/create_post/" method="POST">
 					{% csrf_token %}
 					<span id="formOneTitle" class="login100-form-title p-b-43">
 						Login to continue
 					</span>
-					
+
 					<!-- Form Tag -->
 					<input hidden class="input100" id="employeeLoginTag" value="employeeLogin">
 
@@ -79,22 +79,22 @@
 				</form>
 
 				<!--- SIGN UP -->
-				<form id="podsSignup" class="login100-form validate-form" 
+				<form id="podsSignup" class="login100-form validate-form"
 				style="display:none" action="/create_post/" method="POST">
 					{% csrf_token %}
 					<span class="login100-form-title p-b-43">
 						Sign up to continue
 					</span>
-					
+
 					<!-- Form Tag -->
 					<input hidden class="input100" id="employeeSignupTag" value="employeeSignup">
-					
+
 					<div class="wrap-input100 validate-input" data-validate = "Last Name is required!">
 						<input class="input100" type="text" id="lastName">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Last Name</span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input" data-validate = "First Name is required!">
 						<input class="input100" type="text" id="firstName">
 						<span class="focus-input100"></span>
@@ -106,7 +106,7 @@
 						<span class="focus-input100"></span>
 						<span class="label-input100">Office Telephone</span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input" data-validate = "Office Telephone is required!">
 						<input class="input100" type="tel" id="personalTel">
 						<span class="focus-input100"></span>
@@ -118,19 +118,19 @@
 						<span class="focus-input100"></span>
 						<span class="label-input100">Office Email</span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input" data-validate = "Valid Primary Email is required: ex@abc.com">
 						<input class="input100" type="text" id="personalEmail">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Personal Email</span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input" data-validate = "Home Address is required!">
 						<input class="input100" type="text" id="homeAddress">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Home Address</span>
 					</div>
-					
+
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" id="signUpPass">
 						<span class="focus-input100"></span>
@@ -140,27 +140,27 @@
 					<div class="container-login100-form-btn">
 						<input id="submitFormTwo" type="submit" class="login100-form-btn" value="Sign Up">
 					</div>
-					
+
 					<div class="text-center p-t-46 p-b-20">
 						<span id="spanLogin" class="txt1 pods-cusor">or click here to sign in</span>
 					</div>
 				</form>
-												  				
-				<div class="login100-more" style="background-image: url('/static/monitoringTool/img/bg-01.jpg');">
+
+				<div class="login100-more" style="background-image: url('/uadsshAFSVAasb/monitoringTool/img/bg-01.jpg');">
 				</div>
-				
+
 			</div>
 		</div>
-		
-		<!-- ***** Status Modal ***** -->			
-		<div id="statusModalContainer" class="container">				
+
+		<!-- ***** Status Modal ***** -->
+		<div id="statusModalContainer" class="container">
 			<!-- Trigger the modal with a button -->
 			<button hidden id="statusModalButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#statusModal"></button>
 
 			<!-- Modal -->
 			<div class="modal fade" id="statusModal" >
 				<div class="modal-dialog">
-					
+
 				  <!-- Modal content-->
 				  <div class="modal-content">
 					<div class="modal-header">
@@ -173,16 +173,16 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				  </div>
-					  
+
 				</div>
-			</div>	
-				  
+			</div>
+
 		</div>
 	</div>
 
 	<!-- Extra block Script -->
 	{% block script %}
-  
+
 	<!--===============================================-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js" integrity="sha256-8y2mv4ETTGZLMlggdrgmCzthTVCNXGUdCQe1gd8qkyM=" crossorigin="anonymous"></script>
 	<!--================================================-->
@@ -191,16 +191,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.js" integrity="sha256-iacRP5fv2z3yGk6gnwi/CjK8GRrr5MROIurU7iwYXRM=" crossorigin="anonymous"></script>
 	<!--================================================-->
-	<script src="/static/monitoringTool/js/3rdparty/countdowntime.js"></script>
+	<script src="/uadsshAFSVAasb/monitoringTool/js/3rdparty/countdowntime.js"></script>
 
-	<!--================================================-->	
-	<script src="/static/monitoringTool/js/3rdparty/ajaxCSRFTokenHandler.js"></script>
+	<!--================================================-->
+	<script src="/uadsshAFSVAasb/monitoringTool/js/3rdparty/ajaxCSRFTokenHandler.js"></script>
 	<!--=======================================================-->
-	<script src="/static/monitoringTool/js/3rdparty/main.js"></script>
-	
+	<script src="/uadsshAFSVAasb/monitoringTool/js/3rdparty/main.js"></script>
+
 	<!-- Custom js -->
-	<script> 
-	document.writeln("<script type='text/javascript' src='/static/monitoringTool/js/pods-main.js'><'/script>");
+	<script>
+	document.writeln("<script type='text/javascript' src='/uadsshAFSVAasb/monitoringTool/js/pods-main.js'><'/script>");
     </script>
 	{% endblock %}
 	
