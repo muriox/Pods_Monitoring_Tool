@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'podswebappdb',
+        'NAME': 'pods_monitoring_tool_db',
         'USER': 'podsappdbserver@podsappdb',
         'PASSWORD': 'dbaccess123,.',
         'HOST': 'podsappdb.mysql.database.azure.com',
