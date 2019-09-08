@@ -18,6 +18,7 @@ def home(request):
     return render(request, 'pages/index.html')
     #return HttpResponse('<b>Home Page</b>')
 
+
 def dashboard(request):
     print('*** DashBoard ****')
     return render(request, 'pages/dashboard.html')
@@ -1825,7 +1826,7 @@ def create_active_cluster_and_devices(request):
     status_check = ['ACTIVE', 'DEACTIVATED']
 
     # Get session name
-    session_name = request.POST.get('sessionName')
+    #session_name = request.POST.get('sessionName')
 
     # Get form fields data
     login_email = request.POST.get('loginEmail').upper()

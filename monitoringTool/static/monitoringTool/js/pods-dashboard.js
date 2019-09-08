@@ -28,11 +28,8 @@ $(document).ready(function() {
     setupTabContentAndFormDisplay("#navContentContracts", "#setupAndConfigTab", "#setupCollapse", "#ContentSetupCollapse", "#createContentContractsCollapse", "#monitoringToolTab");
     showTabElementContent("#navOther", "#setupAndConfigTab", "#monitoringToolTab");
 
-	// Date picker
-	//podsDatePicker('#deviceManufacturedYearInput');
     // Setup/Configuration and Monitoring show/hide control
-    setupAndMonitoringToolDisplay("#setupAndConfigButton", "#monitoringToolCollapse");
-    setupAndMonitoringToolDisplay("#monitoringToolButton", "#setupCollapse");
+    setupAndMonitoringToolDisplayFromAnotherButton("#navMonitoringTool", "#monitoringToolTab");
 	
 	/** Form Functions */
 	// Create Country
@@ -48,7 +45,7 @@ $(document).ready(function() {
 	createDeviceForm("#podsCreateDevice", 'createDeviceTag', 'deviceMacAddressInput', 'deviceStatusInput', 'devices');
 
 	// Create Device Configuration	
-	createDeviceConfigForm("#podsCreateDeviceConfig", 'createDeviceConfigTag', 'deviceOfDeviceConfigInput', 'deviceManufacturedYearInput', 'deviceExtraInfoInput', 'none');	
+	createDeviceConfigForm("#podsCreateDeviceConfig", 'createDeviceConfigTag', 'deviceOfDeviceConfigInput', 'deviceManufacturedYearInput', 'deviceExtraInfoInput', 'noSession');	
 	
 	// Create Cluster Types	
 	createClusterTypeForm("#podsCreateClusterType", 'createClusterTypeTag', 'clusterTypeInput', 'clusterTypes');
@@ -57,7 +54,7 @@ $(document).ready(function() {
 	createClusterSetupForm("#podsCreateClusterSetup", 'createClusterSetupTag', 'clusterSetupOfAreaInput', 'clusterTypeOfClusterSetupInput', 'clusterExposureInput', 'clusterStatusInput', 'clusterLocationDetailInput', 'clusterSetups');
 	
 	// Create Cluster Network Configuration 	
-	createClusterNetworkConfigForm("#podsCreateClusterNetworkConfig", 'createClusterNetworkConfigTag', 'clusterSetupOfClusterNetConfigInput', 'clusterNetworkProviderInput', 'clusterNetworkPassInput', 'none');
+	createClusterNetworkConfigForm("#podsCreateClusterNetworkConfig", 'createClusterNetworkConfigTag', 'clusterSetupOfClusterNetConfigInput', 'clusterNetworkProviderInput', 'clusterNetworkPassInput', 'noSession');
 	
 	// Create Content Types	
 	createContentTypeForm("#podsCreateContentType", 'createContentTypeTag', 'contentTypeInput', 'contentTypes');
@@ -69,16 +66,16 @@ $(document).ready(function() {
 	createClientProfileForm("#podsCreateClientProfile", 'createClientProfileTag', 'clientNameInput', 'clientTelInput', 'clientContactPersonInput', 'clientEmailInput', 'clientAddressInput', 'clientProfiles');
 
 	// Create Active Cluster, Content and Device Setup
-	createActiveClusterAndDevicesForm("#podsCreateActiveCAndDevice", 'createActiveClusterAndDevicesTag', 'clusterSetupOfActiveCandDeviceInput', 'deviceOfActiveCandDeviceInput', 'none');
+	createActiveClusterAndDevicesForm("#podsCreateActiveCAndDevice", 'createActiveClusterAndDevicesTag', 'clusterSetupOfActiveCandDeviceInput', 'deviceOfActiveCandDeviceInput', 'noSession');
 	
 	// Create Active Cluster and Content Setup
-	createActiveClusterAndContentsForm("#podsCreateActiveCAndContent", 'createActiveClusterAndContentsTag', 'clusterSetupOfActiveCandContentInput', 'contentSetupOfActiveCandContentInput', 'none');
+	createActiveClusterAndContentsForm("#podsCreateActiveCAndContent", 'createActiveClusterAndContentsTag', 'clusterSetupOfActiveCandContentInput', 'contentSetupOfActiveCandContentInput', 'noSession');
 	
 	/** Find/Search/fetch method calls */
 	// Fetch all list data required onload
 	fetchAllRequiredListDataOnLoad('onloadTag');
 	
-	fetchClusterDetails('#podsSearchClusterDetails', 'findClusterDetailsTag', 'cityOfClusterDetailsInput', 'areaOfClusterDetailsInput', 'clusterSetupOfClusterDetailsInput', 'none');
+	fetchClusterDetails('#podsSearchClusterDetails', 'findClusterDetailsTag', 'cityOfClusterDetailsInput', 'areaOfClusterDetailsInput', 'clusterSetupOfClusterDetailsInput', 'noSession');
 	
 	/** NOTE: NOT RELEVANT AT THE MOMENT
 	//Click and fatch list of countries data
@@ -106,34 +103,26 @@ $(document).ready(function() {
 	}
 	
     // Setup and Monitoring Tool display function
-    function setupAndMonitoringToolDisplay(mainId, controlledId) {
-        $(mainId).click(function() {
-            var isVisible = $(controlledId).is(":visible");
-
-            if (isVisible) {
-                $(controlledId).collapse('hide');
-                $(mainId).collapse('show');
-                //$(mainId).show();
-            } else {
-                $(mainId).collapse('show');
-                //$(mainId).show();
-            }
-        });
-    }
+//    function setupAndMonitoringToolDisplay(mainId, controlledId) {
+//        $(mainId).click(function() {
+//            console.log("setupAndMonitoringToolDisplay function");
+//
+//            var isVisible = $(controlledId).is(":visible");
+//            if (isVisible) {
+//                $(controlledId).tab('hide');
+//                $(mainId).collapse('show');
+//            } else {
+//                $(mainId).collapse('show');
+//            }
+//        });
+//    }
 
     // A button for Setup and Monitoring Tool display function
-    function setupAndMonitoringToolDisplayFromAnotherButton(clickedButton, mainId, controlledId) {
+    function setupAndMonitoringToolDisplayFromAnotherButton(clickedButton, mainTab) {
         $(clickedButton).click(function() {
-            var isVisible = $(controlledId).is(":visible");
+            console.log("setupAndMonitoringToolDisplayFromAnotherButton function");
 
-            if (isVisible) {
-                $(controlledId).collapse('hide');
-                $(mainId).collapse('show');
-                //$(mainId).show();
-            } else {
-                $(mainId).collapse('show');
-                //$(mainId).show();
-            }
+            $(mainTab).tab('show');
         });
     }
     // Display 3-level nested contents onclick and check if a top-level div is displayed
@@ -152,7 +141,7 @@ $(document).ready(function() {
             $(sub1).collapse('show');
             $(sub2).collapse('show');
             $(sub3).collapse('show');
-            $(checkDisplay).tab('hide');
+//            $(checkDisplay).tab('hide');
         });
     }
     // Show/Display an element onclick
@@ -182,24 +171,11 @@ $(document).ready(function() {
             $(tab).tab('show');
             $(controlled).collapse('show');
             $(focusElement).focus();
-            $(checkDisplay).tab('hide');
+//            $(checkDisplay).tab('hide');
         });
     }
-	
-	/* Date picker
-	function podsDatePicker(inputFieldId) {
-		//$( document ).ready(function() {
-			$(inputFieldId).datepicker({ 
-				format: 'yyyy-mm-dd'
-			});
-			$(inputFieldId).on("change", function () {
-				var fromdate = $(this).val();
-				alert(fromdate);
-			});
-		//}); 
-	
-	}
-	*/
+
+
 	/*************** INTERACTIVE Functions depending on AJAX *******
 	----------------------------------------------------*/
 	// Generic fetch all required list data, save in seperate sessions, update all respective 
@@ -258,7 +234,7 @@ $(document).ready(function() {
 				var clientProfilesJSONData = JSON.parse(clientProfilesSessionData);	
 				var contentSetupsJSONData = JSON.parse(contentSetupsSessionData);	
 				
-				console.log("Latest : " + clientProfilesJSONData);	// Sanity check
+				console.log("Latest : " + citiesSessionData);	// Sanity check
 
 				/* List all Select Elements that requires in it's form below: */
 				returnSelectElementAndOptionInput (employeesJSONData, 'employeeOfContentSetupInput', 'Employee Rep.');
@@ -280,7 +256,7 @@ $(document).ready(function() {
 				returnSelectElementAndOptionInput (contentTypesJSONData, 'contentTypeOfContentSetupInput', 'Content Type');
 				
 				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterNetConfigInput', 'Cluster Setup');
-				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterWeatherConfigInput', 'Cluster Setup');				
+				//returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterWeatherConfigInput', 'Cluster Setup');				
 				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfActiveCandDeviceInput', 'Cluster Setup');
 				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfActiveCandContentInput', 'Cluster Setup');
 				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterDetailsInput', 'Cluster Setup');
@@ -306,7 +282,7 @@ $(document).ready(function() {
 	function returnSelectElementAndOptionInput (json, selectInputElementId, defaultSelectName) {
 		console.log("returnSelectElementAndOptionInput function"); // sanity check
 
-		var strValue ="<option value=\"NO DATA\" selected>Select " + defaultSelectName + "</option>";
+		var strValue ="<option value=\"none\" selected>Select " + defaultSelectName + "</option>";
 		
 		// Fetch/Extra data from returned JSON data
 		Object.keys(json).forEach(function(key) {
@@ -321,6 +297,7 @@ $(document).ready(function() {
 		
 		// Update input div inner HTML
 		//document.getElementById(selectInputElementId).innerHTML = currentElementValue.concat(strValue);
+		console.log("+_+_+_+ document.getElementById: " + selectInputElementId);
 		document.getElementById(selectInputElementId).innerHTML = strValue;
 
 		$('#' + selectInputElementId).selectpicker('refresh');		// Refresh element (VERY IMPORTANT)!
@@ -347,6 +324,8 @@ $(document).ready(function() {
 			console.table(JSONData);
 		});
 					
+		console.log("JSONData: " + JSONData);
+		
 		JSONData = JSONData.slice(0, (JSONData.length - 1)) + "}";
 		console.log("Session Data: " + JSONData);
 		
@@ -599,7 +578,7 @@ $(document).ready(function() {
 		// Check for any empty form field
 		for (i = 0; i < formValues.length; i++) {
 			var val = formValues[i];
-			if (!val || val==="" || val.length < 0 || val == null || val.trim() === ''|| val === 'NO DATA') {
+			if (!val || val==="" || val.length < 0 || val == null || val.trim() === ''|| val === 'none') {
 				formValidation = false;
 			}
 		}
@@ -1000,7 +979,7 @@ $(document).ready(function() {
 				console.log("Latest : " + clusterSetupsJSONData);	// Sanity check
 
 				/* List all Select Elements that requires CLUSTER TYPES in it's form below: */
-				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterNetConfigInput', 'Cluster Setup');returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterWeatherConfigInput', 'Cluster Setup');
+				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterNetConfigInput', 'Cluster Setup');//returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterWeatherConfigInput', 'Cluster Setup');
 				returnSelectElementAndOptionInput (clusterSetupsJSONData, 'clusterSetupOfClusterDetailsInput', 'Cluster Setup');
 			} 
 			

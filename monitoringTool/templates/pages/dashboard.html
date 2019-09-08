@@ -11,15 +11,15 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Monitoring Tool</h3>
+                <h3>Management Tool</h3>
                 <strong>MT</strong>
             </div>
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#">
-                        <i class="fas fa-home"></i>
-                        Home
+                    <a href="">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh
                     </a>
                 </li>
                 <li>
@@ -29,7 +29,7 @@
                     </a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
-                        Key Pages
+                        Key Links
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
@@ -47,17 +47,15 @@
                         <li>
                             <a id="keyClients">Clients</a>
                         </li>
-						<li>
-                            <a id="keyEmployees">Employees</a>
-                        </li>
                     </ul>
                 </li>
                 <li>
-                    <a id="navMonitoringTool">
+                    <a href="#" id="navMonitoringTool">
                         <i class="fa fa-clipboard-list"></i>
-                        Monitoring Tool
+                        Management Tool
                     </a>
                 </li>
+				<!--
                 <li>
                     <a href="#">
                         <i class="fas fa-question"></i>
@@ -70,24 +68,16 @@
                         Contact
                     </a>
                 </li>
+				-->
 				<li>
                     <a href="" id="logout" class="article text-center">
-                        <i  class="fas fa-sign-out-alt"></i>
+                        <i class="fas fa-sign-out-alt"></i>
                         Log Out
                     </a>
                 </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
-                <!--<li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download text-center">Log OutDownload source </a>
-                </li>
-                <li>
-                    <a href="" id="logout" class="article text-center">
-                        <i  class="fas fa-sign-out-alt"></i>
-                        Log Out
-                    </a>
-                </li>-->
             </ul>
         </nav>
 
@@ -111,10 +101,10 @@
                                 <a class="nav-link" id="navClientSetup">Client's Setup</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="navContentSetup">Content's Setup</i></a>
+                                <a class="nav-link" id="navContentSetup">Content's Setup</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="navChangeRequest">Change Request</i></a>
+                                <a class="nav-link" id="navChangeRequest">Change Request</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="navOther"><b><i>....</i></b></a>
@@ -125,8 +115,8 @@
             </nav>
 
 			<div class="container-fluid">
-				<h2>About Setup Monitoring Tool</h2>
-				<p>About information about the monitoring tool.</p>
+				<h2>About Management Tool</h2>
+				<p>About information about the Management tool.</p>
 				<p>more info</p>
 			</div>
 
@@ -140,14 +130,14 @@
 						<a class="nav-link" id="setupAndConfigTab" data-toggle="tab" role="tab" data-target="#setupCollapse" aria-expanded="false" aria-controls="setupCollapse"><h3>Setups and Configurations</h3></a>
 						<!--<a class="nav-link active" id="setupAndConfigTab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Setups and Configurations</a>-->
 					  </li>
-                    <!-- Monitoring Tool tab -->
+                    <!-- Management Tool tab -->
 					  <li class="nav-item rounded pods-tab pods-cusor">
-						<a class="nav-link" id="monitoringToolTab" data-toggle="tab" role="tab" data-target="#monitoringToolCollapse" aria-expanded="false" aria-controls="monitoringToolCollapse"><h3>Monitoring Tool</h3></a>
+						<a class="nav-link" id="monitoringToolTab" data-toggle="tab" role="tab" data-target="#monitoringToolCollapse" aria-expanded="false" aria-controls="monitoringToolCollapse"><h3>Management Tool</h3></a>
 					  </li>
 					</ul>
 				</p>
 
-				<!-- Container for Setup and Monitoring tools  -->
+				<!-- Container for Setup and Management tools  -->
 				<div id="setupsAndToolsContainer" class="container-fluid">
 
 					<!-- Setups and Configurations div  -->
@@ -267,7 +257,7 @@
 														  <div class="col">
 															<input id="deviceMacAddressInput" class="form-control" type="text" placeholder="Device MAC Address" Required>
 														  </div>
-														  <div class="col" Required>							
+														  <div class="col">
 															<select id="deviceStatusInput" class="selectpicker form-control" data-live-search="true">
 																<option selected value="NO DATA">Choose a Status</option>
 																<option value="UNUSED">UNUSED</option>
@@ -298,7 +288,7 @@
 													 <div class="form-group row">
 														 <div class="col" id="deviceListDeviceConfigInputDiv">
 															<!-- AJAX Devices auto-populated list -->
-															<select id="deviceOfDeviceConfigInput" class="selectpicker form-control" data-live-search="true" required>
+															<select id="deviceOfDeviceConfigInput" class="selectpicker form-control" data-live-search="true" required></select>
 														  </div>
 														  <div class="col">
 															<input id="deviceManufacturedYearInput" class="form-control" type="text" placeholder="Date (YYYY-MM-DD)">
@@ -321,7 +311,7 @@
 						<!-- Cluster and Configuration Setup button and div  -->
 						<div class="container-fluid">
 							<p>
-								<button id="clusterSetupButton" class="btn pods-toggle-button-2 btn-lg btn-block" type="button" data-toggle="collapse" data-target="#clusterSetupCollapse" aria-expanded="false" aria-controls="clusterSetupCollapse"><b>Clusters and Configuration Setup</b></button>
+								<button id="clusterSetupButton" class="btn pods-toggle-button-2 btn-lg btn-block" type="button" data-toggle="collapse" data-target="#clusterSetupCollapse" aria-expanded="false" aria-controls="clusterSetupCollapse"><b>Clusters Configuration and Setup</b></button>
 							</p>
 							<div id="clusterSetupCollapse" class="collapse">
 
@@ -433,13 +423,14 @@
 									</div>
 								</div>
 
-								<!-- 4 - Create Clusters Weather Configuration button and div  -->
+								<!-- 4 - Create Clusters Weather Configuration button and div  --
 								<div class="container-fluid">
 									<p>
 										<button id="createClusterWeatherConfigButton" class="btn pods-toggle-button-3" type="button" data-toggle="collapse" data-target="#createClusterWeatherConfigCollapse" aria-expanded="false" aria-controls="createClusterWeatherConfigCollapse">Create Cluster Weather Configuration (NOT RELEVANT FOR NOW)</button>
 									</p>
+
 									<div id="createClusterWeatherConfigCollapse" class="collapse">
-										<!-- Create Clusters Weather Configuration form -->
+										<!-- Create Clusters Weather Configuration form --
 										<div class="container-fluid">
 											<p>
 												<form action="/setup_post/" method="POST">
@@ -448,7 +439,7 @@
 													<p>
 														<div class="form-group row">
 															<div class="col" id="clusterSetupListClusterWeatherConfigDiv">
-																<!-- AJAX Cluster Setup auto-populated list -->
+																<!-- AJAX Cluster Setup auto-populated list --
 																<select id="clusterSetupOfClusterWeatherConfigInput" class="selectpicker form-control" data-live-search="true" required>
 																</select>					
 															</div>
@@ -484,7 +475,8 @@
 											</p>
 										</div>
 									</div>
-								</div>								
+								</div>	
+								-->
 							</div>
 						</div>
 
@@ -596,7 +588,7 @@
 								<!-- 5 - Create Active Clusters and Devices button and div  -->
 								<div class="container-fluid">
 									<p>
-										<button id="createActiveClustersAndDevicesButton" class="btn pods-toggle-button-3" type="button" data-toggle="collapse" data-target="#createActiveClustersAndDevicesCollapse" aria-expanded="false" aria-controls="createActiveClustersAndDevicesCollapse">Create Active Clusters and Devices</button>
+										<button id="createActiveClustersAndDevicesButton" class="btn pods-toggle-button-3" type="button" data-toggle="collapse" data-target="#createActiveClustersAndDevicesCollapse" aria-expanded="false" aria-controls="createActiveClustersAndDevicesCollapse">Map Active Clusters to Devices</button>
 									</p>
 									<div id="createActiveClustersAndDevicesCollapse" class="collapse">
 									<!-- Create Active Clusters and Devices form -->
@@ -626,7 +618,7 @@
 								<!-- 6 - Create Active Clusters and Content button and div  -->
 								<div class="container-fluid">
 									<p>
-										<button id="createActiveClustersAndContentsButton" class="btn pods-toggle-button-3" type="button" data-toggle="collapse" data-target="#createActiveClustersAndContentsCollapse" aria-expanded="false" aria-controls="createActiveClustersAndContentsCollapse">Create Active Clusters and Display Content Setup</button>
+										<button id="createActiveClustersAndContentsButton" class="btn pods-toggle-button-3" type="button" data-toggle="collapse" data-target="#createActiveClustersAndContentsCollapse" aria-expanded="false" aria-controls="createActiveClustersAndContentsCollapse">Map Active Clusters to Display Content Setups</button>
 									</p>
 									<div id="createActiveClustersAndContentsCollapse" class="collapse">
 									<!-- Create Active Clusters and Content Setup form -->
@@ -749,7 +741,7 @@
 
 					</div>
 
-					<!-- Monitoring Tool div  -->
+					<!-- Management Tool div  -->
 					<div class="collapse" id="monitoringToolCollapse">
 						
 						<!-- Get a Clusters details div  -->

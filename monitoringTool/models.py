@@ -115,7 +115,7 @@ class ClusterTypes(models.Model):
     """
     cluster_type_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # cluster_location_type: Highway, Street, Train Station, Bus Station, University, College,
-    #                        High School, Primary School, Event Centre, Sport Center, Stores etc.
+    #                        High School, Primary School, Event Centre, Sport Centre, Stores etc.
     cluster_location_type = models.CharField(max_length=50, null=False)
 
     last_modified_user = models.CharField(max_length=80, null=False)

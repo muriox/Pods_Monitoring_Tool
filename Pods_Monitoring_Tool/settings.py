@@ -74,6 +74,28 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'podsmanagementdb',
+#         'USER': 'podsapp',
+#         'PASSWORD': 'Basket123',
+#         'HOST': 'podsapp.mysql.eu.pythonanywhere-services.com',
+#         'PORT': '3306'
+#     }
+# }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sql2304458',
+        'USER': 'sql2304458',
+        'PASSWORD': 'uM8*gL9!',
+        'HOST': 'sql2.freesqldatabase.com',
+        'PORT': '3306'
+    }
+}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'pods_monitoring_tool_db',
 #         'USER': 'root',
 #         'PASSWORD': '123456',
@@ -82,19 +104,19 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'podswebappdb',
-        'USER': 'podsdbserver@podswebappmysqlserver',
-        'PASSWORD': 'dbaccess123,.',
-        'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
-        }
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'podswebappdb',
+#         'USER': 'podsdbserver@podswebappmysqlserver',
+#         'PASSWORD': 'dbaccess123,.',
+#         'HOST': 'podswebappmysqlserver.mysql.database.azure.com',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
+#         }
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
