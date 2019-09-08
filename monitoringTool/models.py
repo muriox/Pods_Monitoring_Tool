@@ -291,28 +291,6 @@ class ContentsSetupDataContract(models.Model):
         verbose_name_plural = "ContentsSetupDataContract"
 
 
-# class ContentsData(models.Model):
-#     """
-#        12 CONTENTS DATA TABLE
-#     """
-#     content_data_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-#     content_setup = models.ForeignKey(ContentsSetup, on_delete=models.PROTECT, null=False, related_name='contentsData',
-#                                       related_query_name='contentData')
-#     # Actual data (Image preferably) or directory
-#     content_data = models.FileField(upload_to='contentsData/', verbose_name="", null=False)
-#
-#     last_modified_user = models.CharField(max_length=80, null=False)
-#     last_updated_datetime = models.DateTimeField(auto_now=True, null=False)
-#
-#     objects = models.QuerySet()
-#
-#     def __str__(self):
-#         return self.content_data_id + " - " + self.content_setup.content_title
-#
-#     class Meta:
-#         verbose_name_plural = "ContentsData"
-#
-
 class ClientsProfile(models.Model):
     """
        13 CLIENT PROFILE TABLE
@@ -401,7 +379,7 @@ class ActiveClustersAndContents(models.Model):
                                       related_query_name='ActiveClusterAndContent')
     content_setup = models.ForeignKey(ContentsSetupDataContract, on_delete=models.PROTECT, null=False,
                                       related_name='ActiveClustersAndContents',
-                                      related_query_name='activeClusterAndContent')
+                                      related_query_name='ActiveClusterAndContent')
 
     last_modified_user = models.CharField(max_length=80, null=False)
     last_updated_datetime = models.DateTimeField(auto_now=True, null=False)

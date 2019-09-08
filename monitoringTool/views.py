@@ -2146,17 +2146,50 @@ def fetch_cluster_details(request):
 
 
 def device_request(request):
+    """
+        Fetch Device media contents for devices
+        :param request:
+        :return: HttpResponse object
+    """
+
+    print('*** Fetch Device media contents for devices ****')
+    # Variable declarations
     get_data = request.GET
+    response_data = {}
+    content_dir = '/contents/'
 
     # Ensures request method is a GET
     if request.method == 'GET' and len(request.GET) != 0:
         # print(len(request.GET))
 
-        if ('md' in get_data) and ('ci' in get_data) and ('d' in get_data):
-            print('Request from a Pod')
-            mac_address = get_data.get('md')
-            cluster_id = get_data.get('ci')
+        if 'cName' in get_data:
+            print('Request from a Pod device')
 
+            try:
+
+                cluster_name = get_data.get('cName')
+                content_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_name) \
+                    .values('ActiveClusterAndContent__content_setup__content_data')
+
+                response_data['Contents'] = list(content_data)
+
+                print(response_data)
+
+                result_data = {}
+                count = 0
+                for key in response_data['Contents']:
+                    count = count + 1
+                    # Add/Modify file path
+                    file_name = key.get('ActiveClusterAndContent__content_setup__content_data')
+                    result_data[count] = content_dir + file_name
+
+                return HttpResponse(json.dumps(result_data), content_type="application/json")
+
+            except ObjectDoesNotExist:
+                print("Fetch Device media contents for devices check failed")
+
+                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+                                          + ". Fetch Device media contents for devices validation check failed. DR(1)"
 
 
 def show_contents_data(request):

@@ -5,6 +5,7 @@ from .import views
 urlpatterns = [
     path('', views.home),
     path('dashboard/', views.dashboard),
+    path('pods/', views.device_request),
     path('create_post/', views.create_post),
     path('dashboard/setup_post/', views.setup_post),
     path('dashboard/get_data_request/', views.get_data_request),
