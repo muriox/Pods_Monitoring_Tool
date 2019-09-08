@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'podsmanagementdb',
+#         'NAME': 'podsapp$podsmanagementdb',
 #         'USER': 'podsapp',
 #         'PASSWORD': 'Basket123',
 #         'HOST': 'podsapp.mysql.eu.pythonanywhere-services.com',
@@ -82,16 +82,16 @@ WSGI_APPLICATION = 'Pods_Monitoring_Tool.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql2304458',
-        'USER': 'sql2304458',
-        'PASSWORD': 'uM8*gL9!',
-        'HOST': 'sql2.freesqldatabase.com',
-        'PORT': '3306'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sql2304458',
+#         'USER': 'sql2304458',
+#         'PASSWORD': 'uM8*gL9!',
+#         'HOST': 'sql2.freesqldatabase.com',
+#         'PORT': '3306'
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -103,6 +103,20 @@ DATABASES = {
 #         'PORT': ''
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'podswebappdb',
+        'USER': 'podsappdbserver@podsappdb',
+        'PASSWORD': 'dbaccess123,.',
+        'HOST': 'podsappdb.mysql.database.azure.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'ssl': {'ssl-ca': '/contents/cert/BaltimoreCyberTrustRoot.crt.pem'}
+        }
+    }
+}
 
 # DATABASES = {
 #     'default': {
