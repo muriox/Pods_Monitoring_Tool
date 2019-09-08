@@ -14,8 +14,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="109" column="40" lean-forward="false" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
+            <state relative-caret-position="213">
+              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -96,8 +96,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/monitoringTool/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="923" column="37" lean-forward="false" selection-start-line="923" selection-start-column="37" selection-end-line="923" selection-end-column="37" />
+            <state relative-caret-position="21">
+              <caret line="2096" column="4" lean-forward="true" selection-start-line="2096" selection-start-column="4" selection-end-line="2096" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -656,16 +656,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/monitoringTool/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="923" column="37" lean-forward="false" selection-start-line="923" selection-start-column="37" selection-end-line="923" selection-end-column="37" />
+        <state relative-caret-position="21">
+          <caret line="2096" column="4" lean-forward="true" selection-start-line="2096" selection-start-column="4" selection-end-line="2096" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="109" column="40" lean-forward="false" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
+        <state relative-caret-position="213">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>

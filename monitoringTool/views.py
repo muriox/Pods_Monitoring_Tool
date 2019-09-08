@@ -2145,6 +2145,20 @@ def fetch_cluster_details(request):
                                   + ". Fetch Cluster Details validation check failed. FCD(1)"
 
 
+def device_request(request):
+    get_data = request.GET
+
+    # Ensures request method is a GET
+    if request.method == 'GET' and len(request.GET) != 0:
+        # print(len(request.GET))
+
+        if ('md' in get_data) and ('ci' in get_data) and ('d' in get_data):
+            print('Request from a Pod')
+            mac_address = get_data.get('md')
+            cluster_id = get_data.get('ci')
+
+
+
 def show_contents_data(request):
     print('*** Show contents data ****')
 
