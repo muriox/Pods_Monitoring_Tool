@@ -88,7 +88,7 @@ $(document).ready(function() {
     function logout(podsLogoutId) {
         $(podsLogoutId).click(function() {
             sessionStorage.clear();
-            var newPage = "http://127.0.0.1:8000/";
+            var newPage = "https://podsmanagementapp.azurewebsites.net/";
             window.location.replace(newPage); // Redirect
         });
     }
@@ -1364,7 +1364,7 @@ $(document).ready(function() {
 			console.log("Fetch a Cluster Details form processing..."); // sanity check
 			console.log(formData); // sanity check
 
-			// Fetch a Cluster Details orm processing
+			// Fetch a Cluster Details form processing
 			var formValidation = getRequestFormDataCapturingValidationAndProcessing(formData);
 			console.log("======= Form validation ======: " + formValidation);
 			
