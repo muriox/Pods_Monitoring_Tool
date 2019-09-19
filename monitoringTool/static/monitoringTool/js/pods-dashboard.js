@@ -86,10 +86,13 @@ $(document).ready(function() {
 	---------------------------------------------------- */
     // Logout
     function logout(podsLogoutId) {
+        var homePage = "https://podsmanagementapp.azurewebsites.net/";
+
         $(podsLogoutId).click(function() {
+            console.log("Time for redirect");
             sessionStorage.clear();
-            var newPage = "https://podsmanagementapp.azurewebsites.net/";
-            window.location.replace(newPage); // Redirect
+
+            window.location.replace(homePage); // Redirect
         });
     }
 
