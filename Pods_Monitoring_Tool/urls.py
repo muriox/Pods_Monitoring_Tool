@@ -15,14 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from monitoringTool.views import home, show_contents_data
+from monitoringTool.views import show_contents_data
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('dashboardTest/', show_contents_data),
-    path('admin/', admin.site.urls),
-    path('', include('monitoringTool.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-print("urlpatterns=+++++++++: ", urlpatterns)
+    path('admin/', admin.site.urls),                # For admin access portal
+    path('', include('monitoringTool.urls')),       # For Internal Dashboard Portal
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
+                                                                           document_root=settings.STATIC_ROOT)

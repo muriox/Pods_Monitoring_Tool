@@ -13,10 +13,15 @@ import json
 import uuid
 
 
-def home(request):
-    print('*** Home page ****')
+def internal_home(request):
+    """
+    Renders internal Home page for login/sign up
+    :param: request
+    :return: Internal Home page
+    """
+
+    print('*** Internal Home page ****')
     return render(request, 'pages/index.html')
-    #return HttpResponse('<b>Home Page</b>')
 
 
 def dashboard(request):
@@ -24,65 +29,9 @@ def dashboard(request):
     return render(request, 'pages/dashboard.html')
 
 
-def roll(request):
-    print('*** roll test ****')
+def testing(request):
+    print('*** Testing method ****')
 
-    # Convert UUID value to String without (-) dashes
-    # country_data = list(Countries.objects.filter(country_name='TOGO').values('country_id'))
-    # country_id = uuid.UUID(str(country_data[0].get('country_id'))).hex
-    #
-    # print(country_data)
-    # print(country_id)
-    # val = get_devices_configuration(request, "")
-    # print('val')
-    # print(val)
-
-    # area_data = Areas.objects.filter(area_name='LEWISHAM').values('area_id')
-    # print("Area check pass")
-    # print(area_data)
-    #
-    # cluster_type_data = ClusterTypes.objects.filter(cluster_location_type='HIGHWAY').values('cluster_type_id')
-    # print("Cluster Type check pass")
-    # print(cluster_type_data)
-    #
-    # # Convert >> area_id <<  UUID value to String without (-) dashes
-    # area_id = uuid.UUID(str(area_data[0].get('area_id'))).hex
-    # print("area_id: " + area_id)
-    #
-    # # Convert >> cluster_type_id <<  UUID value to String without (-) dashes
-    # cluster_type_id = uuid.UUID(str(cluster_type_data[0].get('cluster_type_id'))).hex
-    # print("cluster_type_id: " + cluster_type_id)
-    #
-    # # Check if Device Configuration exist
-    # cluster_setup_check = ClustersSetup.objects.filter(area=area_id, cluster_type=cluster_type_id)
-    #
-    # # If Device Configuration record not found
-    # if not cluster_setup_check:
-    #     print("Cluster Setup doesn't exist")
-    #     print(cluster_setup_check)
-
-    # c_data = Cities.objects.get(city_name='LONDON')
-    # a_data = Cities.objects.get(city_name='LONDON').areas.all().values()
-    # data = Areas.objects.all().values()
-    # print(a_data)
-
-    # area_data = Areas.objects.filter(area_name=area_name).values('area_id')
-    # print("Area check pass")
-    # print(area_data)
-    # cluster_setup_data = ClustersSetup.objects.filter(cluster_location_detail='GREENWICH TRAIN STATION') \
-    #     .values('cluster_setup_id')
-    # last_content_data = Test.objects.last()
-    # data = last_content_data.content_data
-    # print(last_content_data)
-
-    # data = ActiveClustersAndDevices.objects.values('content_setup').count()
-    # data = active_cluster_content_limit_check = ActiveClustersAndContents.objects\
-    #         .filter(cluster_setup='3acbe0f35016423f91efe655ca1bc14f').count()
-    # data = ContentsSetupDataContract.delete('b2c94adca4c942e5a4022d2e529e1ad3')
-
-    # data_check = ContentsSetupDataContract.objects.get('84ce26c2156344eab86581ff512d0674').delete()
-    # data_check = ContentsSetupDataContract.objects.filter(content_setup_id='84ce26c2156344eab86581ff512d0674').delete()
-    # print(data_check)
     print("today: ", datetime.datetime.today())
     print("tomorrow: ", datetime.datetime.today() + datetime.timedelta(days=1))
     # print(c)

@@ -1,115 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4b6761-58a5-4291-a74a-f2df4cba79d6" name="Default" comment="" />
+    <list default="true" id="0d4b6761-58a5-4291-a74a-f2df4cba79d6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Pods_Monitoring_Tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pods_Monitoring_Tool.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods_Monitoring_Tool/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pods_Monitoring_Tool/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoringTool/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitoringTool/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoringTool/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitoringTool/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/templates/includes/layout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="72" column="46" lean-forward="true" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
-              <folding>
-                <element signature="n#div#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pods-main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/pods-main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2367">
-              <caret line="94" column="97" lean-forward="true" selection-start-line="94" selection-start-column="97" selection-end-line="94" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pods_Monitoring_Tool/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="25" column="94" lean-forward="false" selection-start-line="25" selection-start-column="94" selection-end-line="25" selection-end-column="94" />
-              <folding>
-                <element signature="e#644#676#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44184">
-              <caret line="2116" column="73" lean-forward="false" selection-start-line="2116" selection-start-column="73" selection-end-line="2116" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pods-dashboard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/pods-dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entryChecks.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/entryChecks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,172 +25,14 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>primary_key=True,</find>
-      <find>ObjectDoesNotExist.silent_variable_failure</find>
-      <find>your account</find>
-      <find>No Record</find>
-      <find>GCT</find>
-      <find>GCT2</find>
-      <find>clusterSetupAreaInput</find>
-      <find>Content Setup setup already exist</find>
-      <find>Q(</find>
-      <find>findClusterDetailsTag</find>
-      <find>mys</find>
-      <find>uadsshAFSVAasb</find>
-      <find>Monitoring</find>
-      <find>setupAndConfigButton</find>
-      <find>logout</find>
-      <find>setupAndMonitoringToolDisplay</find>
-      <find>navMonitoringTool</find>
-      <find>Content's Setup</find>
-      <find>focusElement</find>
-      <find>monitoringToolTab</find>
-      <find>NO DATA</find>
-      <find>setupAndMonitoringToolDisplayFromAnotherButton</find>
-      <find>monitoringToolCollapse</find>
-      <find>none</find>
-      <find>createActiveClusterAndDevicesTag</find>
-      <find>storeResponseToSession</find>
-      <find>device_config_data</find>
-      <find>document.querySelector('#contentData</find>
-      <find>fetchClusterDetails</find>
-      <find>login</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>str(ObjectDoesNotExist.silent_variable_failure)</replace>
-      <replace>clusterSetupOfAreaInput</replace>
-      <replace>static</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\Muda's\Documents\Codes\Python\Django\_virtualEnvironment\Lib</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/podsApp/views.py" />
-        <option value="$PROJECT_DIR$/podsApp/urls.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/templates/webPages/dashboard.html" />
-        <option value="$PROJECT_DIR$/monitoringApp/apps.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/urls.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/templates/includes/layout.html" />
-        <option value="$PROJECT_DIR$/monitoringApp/form.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/forms.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/templates/webPages/dashboardTest.html" />
-        <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/models.py" />
-        <option value="$PROJECT_DIR$/monitoringApp/templates/webPages/index.html" />
-        <option value="$PROJECT_DIR$/monitoringApp/views.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/admin.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/forms.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/pages/dashboard_old.html" />
-        <option value="$PROJECT_DIR$/monitoringTool/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/mainjs.js" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/pages/index_cp.html" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/css/pods-main.css" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/3rdparty/ajaxCSRFTokenHandler.js" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/pages/test.html" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/3rdparty/entryChecks.js" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/entryChecks.html" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/dashboard.js" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/includes/layout.html" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/pages/dashboardTest.html" />
-        <option value="$PROJECT_DIR$/Pods_Monitoring_Tool/urls.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/pages/index.html" />
-        <option value="$PROJECT_DIR$/monitoringTool/templates/pages/dashboard.html" />
-        <option value="$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/models.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/views.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/urls.py" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/entryChecks.js" />
-        <option value="$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/pods-dashboard.js" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoringTool" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoringTool" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoringTool" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoringTool" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoringTool" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoringTool" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-              <item name="Pods_Monitoring_Tool" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pods_Monitoring_Tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1SVlmLHFeimXFj0vPqh6P2890hy" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/MyDrive/M.Sc Embedded Systems/Module 4 - Real Time Development and Artificial Intelligence/Week 1/Assignment/k1743443@kingston.ac.uk/Assignment/PodsProject" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="C:/Python37" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -314,9 +62,6 @@
       </list>
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -330,300 +75,20 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15547329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.336374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.336374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15547329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
-  </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/template/context_processors.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="2" />
-    </breakpoint-manager>
-    <watches-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/home.css" />
-    <entry file="file://$PROJECT_DIR$/monitoringApp/apps.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/middleware/csrf.py" />
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/template/context_processors.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3912">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/migrations/0002_auto_20190616_2345.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/db/models/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/dashboard_old.html" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5221">
-          <caret line="267" column="32" lean-forward="true" selection-start-line="267" selection-start-column="32" selection-end-line="267" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/includes/layout_old.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/css/3rdparty/util.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60526">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/css/fonts/montserrat/OFL.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/css/3rdparty/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/db/models/fields/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/index_.html" />
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/shortcuts.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/test.html" />
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/http/response.py" />
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/core/exceptions.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/css/pods-main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5103">
-          <caret line="243" column="53" lean-forward="false" selection-start-line="243" selection-start-column="53" selection-end-line="243" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/db/models/base.py" />
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/forms/models.py" />
-    <entry file="file://$PROJECT_DIR$/contents/contentsData/4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1913427153/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="2834" column="8" lean-forward="false" selection-start-line="2834" selection-start-column="8" selection-end-line="2834" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/db/models/fields/related.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../_virtualEnvironment/Lib/site-packages/django/conf/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/_virtualEnvironment/Lib/site-packages/django/db/backends/sqlserver_pymssql/base.py" />
-    <entry file="file://$PROJECT_DIR$/_virtualEnvironment/Lib/site-packages/django/db/backends/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/_virtualEnvironment/Lib/site-packages/django/db/backends/signals.py" />
-    <entry file="file://$PROJECT_DIR$/_virtualEnvironment/Lib/site-packages/django/db/backends/ddl_references.py" />
-    <entry file="file://$PROJECT_DIR$/_virtualEnvironment/Lib/site-packages/django/db/backends/utils.py" />
-    <entry file="file://$PROJECT_DIR$/_virtualEnvironment/Lib/site-packages/django/db/backends/base/schema.py" />
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/dashboardTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="89" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/includes/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods_Monitoring_Tool/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods_Monitoring_Tool/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="25" column="94" lean-forward="false" selection-start-line="25" selection-start-column="94" selection-end-line="25" selection-end-column="94" />
-          <folding>
-            <element signature="e#644#676#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44184">
-          <caret line="2116" column="73" lean-forward="false" selection-start-line="2116" selection-start-column="73" selection-end-line="2116" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/3rdparty/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-613">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="385" column="0" lean-forward="false" selection-start-line="385" selection-start-column="0" selection-end-line="385" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/3rdparty/countdowntime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/3rdparty/ajaxCSRFTokenHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/templates/pages/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="72" column="46" lean-forward="true" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
-          <folding>
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/pods-main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2367">
-          <caret line="94" column="97" lean-forward="true" selection-start-line="94" selection-start-column="97" selection-end-line="94" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/entryChecks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/static/monitoringTool/js/pods-dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monitoringTool/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
