@@ -5,19 +5,17 @@ from django.http import HttpResponse
 from .models import Test, EmployeesProfile, StaffLogin, Countries, Cities, Areas, Devices, DevicesConfiguration, \
     ClusterTypes, ClustersSetup, ClustersNetworkConfiguration, ContentTypes, ContentsSetupDataContract, \
     ClientsProfile, ActiveClustersAndDevices, ActiveClustersAndContents
-from .forms import ContentForm
 from django.db import connection
 from django.core.exceptions import ObjectDoesNotExist
-from django.core import serializers
 import json
 import uuid
 
 
 def internal_home(request):
     """
-    Renders internal Home page for login/sign up
-    :param: request
-    :return: Internal Home page
+        Renders internal Home page for login/sign up
+        :param: request
+        :return: Internal Home page
     """
 
     print('*** Internal Home page ****')
@@ -25,6 +23,12 @@ def internal_home(request):
 
 
 def dashboard(request):
+    """
+        For Internal Monitoring Dashboard
+        :param: request
+        :return: render Internal Dashboard page
+    """
+
     print('*** DashBoard ****')
     return render(request, 'pages/dashboard.html')
 
@@ -42,6 +46,11 @@ def testing(request):
 
 
 def create_post(request):
+    """
+        For creating employee accounts and login into Internal Monitoring Dashboard
+        :param: request
+        :return: HttpResponse with JSON data
+    """
     print('*** Sign up/Staff login post ****')
     print(json.dumps(request.POST))
 
@@ -55,25 +64,20 @@ def create_post(request):
             print("Tag: ", request.POST.get('employeeLoginTag'))
             # Staff login
             return HttpResponse(employee_login(request))
-
-        if request.POST.get('createCountryTag'):
-            print("Tag: ", request.POST.get('createCountryTag'))
-            # Create a Country
-            return HttpResponse(employee_login(request))
     else:
-            return HttpResponse(json.dumps({'result': 'Not a POST request. No data. MAIN(3)'}),
-                                content_type="application/json")
+        return HttpResponse(json.dumps({'result': 'Not a POST request. No data. MAIN(3)'}),
+                            content_type="application/json")
 
 
 def setup_post(request):
     """
-    For setup and configuration
-    :param request:
-    :return:
+        For setup and configuration
+        :param: request
+        :return: HttpResponse with JSON data
     """
     print('*** Setup post ****')
     print(json.dumps(request.POST))
-    print(json.dumps(request.POST))
+
     tag = request.POST.get('ajaxRequestTag')
 
     if request.method == 'POST':
@@ -131,11 +135,6 @@ def setup_post(request):
         if tag == 'createContentSetupTag':
             print("++Tag: ", tag)
             print("Form contenting files uploading")
-            # contentDataInput = request.FILES['contentDataInput']
-            # contentContractDataInput = request.FILES['contentContractDataInput']
-            #
-            # if contentDataInput and contentContractDataInput:
-            #     print("-----+++Yes+++------")
             # Create a Content Setup, data and contract file uploading
             return HttpResponse(create_content_setup_data_contract(request))
 
@@ -150,15 +149,16 @@ def setup_post(request):
             return HttpResponse(create_active_cluster_and_contents(request))
 
     else:
-            return HttpResponse(json.dumps({'result': 'Not a POST request. No data. MAIN(3)'}),
-                                content_type="application/json")
+        return HttpResponse(json.dumps({'result': 'Not a POST request. No data. MAIN(3)'}),
+                            content_type="application/json")
 
 
 def get_data_request(request):
     """
-    Manages all get requests coming from web page
-    :param request:
-    :return:
+        - Manages all GET requests coming from the Internal Dashboard page, like aLl on page load requests.
+        - Manages POST request for finding "fetch_cluster_details".
+        :param: request
+        :return: get request response data
     """
     print('*** Get data request ****')
     print(json.dumps(request.GET))
@@ -169,31 +169,28 @@ def get_data_request(request):
         if tag == 'onloadTag':
             # Fetch all onload data
             return HttpResponse(fetch_all_onload_data(request, 'DATA'))
-
         else:
             print("GET request issue")
+            return HttpResponse(json.dumps({'result': 'Not an onloadTag GET request. No data. GDR(1)'}),
+                                content_type="application/json")
     else:
         print('*** POST data request ****')
-        print(json.dumps(request.POST))
         tag = request.POST.get('ajaxRequestTag')
 
         # Find/Fetch a Cluster Details
         if tag == 'findClusterDetailsTag':
-            # Fetch
             return HttpResponse(fetch_cluster_details(request))
-            # return HttpResponse(fetch_cluster_details(request, 'DATA'))
 
-
-        return HttpResponse(json.dumps({'result': 'Not a GET request. No data. GDR(1)'}),
+        return HttpResponse(json.dumps({'result': 'Not a findClusterDetailsTag POST/GET request. No data. GDR(2)'}),
                             content_type="application/json")
 
 
 def fetch_all_onload_data(request, return_type):
     """
-    Fetch and return all data lists required onloading page
-    :param request: HTTP request
-    :param return_type: Different data list (such as Countries, Cities etc)
-    :return:
+        Fetch and return all data lists required onloading page
+        :param request: HTTP request
+        :param return_type: HTTP return type
+        :return: HttpResponse object
     """
     response_data = {}
 
@@ -215,9 +212,9 @@ def fetch_all_onload_data(request, return_type):
 
 def employee_signup(request):
     """
-    Sign up/ set up Employee account and Staff login
-    :param request:
-    :return: HttpResponse object
+        Sign up/ set up Employee account and Staff login
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Employee Sign Up ****')
@@ -240,7 +237,7 @@ def employee_signup(request):
             print("Employee's Email check : ", office_email)
 
         except ObjectDoesNotExist:
-            response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+            response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                       + ". Employee email validation check failed. ES(1)"
 
             return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -248,15 +245,16 @@ def employee_signup(request):
         if not data_check:
             try:
                 # Employee Profile set up
-                employee_data = EmployeesProfile(employee_lname=last_name, employee_fname=first_name, employee_tel=office_tel,
+                employee_data = EmployeesProfile(employee_lname=last_name, employee_fname=first_name,
+                                                 employee_tel=office_tel,
                                                  personal_tel=personal_tel, employee_oemail=office_email,
                                                  employee_pemail=personal_email, employee_address=address,
                                                  last_modified_user=office_email)
                 employee_data.save()
 
             except ObjectDoesNotExist:
-                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
-                                      + ". Employee save validation failed. ES(2)"
+                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
+                                          + ". Employee save validation failed. ES(2)"
 
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
 
@@ -270,8 +268,8 @@ def employee_signup(request):
                 staff_login_data.save()
 
             except ObjectDoesNotExist:
-                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
-                                      + ". Employee's validation failed. ES(3)"
+                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
+                                          + ". Employee's validation failed. ES(3)"
 
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
 
@@ -288,14 +286,15 @@ def employee_signup(request):
             return HttpResponse(json.dumps(response_data), content_type="application/json")
 
     else:
-        return HttpResponse(json.dumps({'result': 'Not a POST request. No data. ES(4)'}), content_type="application/json")
+        return HttpResponse(json.dumps({'result': 'Not a POST request. No data. ES(4)'}),
+                            content_type="application/json")
 
 
 def get_employees(request, return_type):
     """
-    Get list of Employee
-    :param request:
-    :return:
+        Get list of Employee
+        :param request:
+        :return: HttpResponse object
     """
 
     print('*** Get Employees ****')
@@ -333,9 +332,9 @@ def get_employees(request, return_type):
 
 def employee_login(request):
     """
-    Staff login
-    :param request:
-    :return: HttpResponse object
+        Staff login
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Employee Login ****')
@@ -351,7 +350,7 @@ def employee_login(request):
             employee = EmployeesProfile.objects.filter(employee_oemail=office_email).get()
 
         except ObjectDoesNotExist:
-            response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+            response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                       + ". Staff's account validation failed. SL(1)"
 
             return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -365,7 +364,7 @@ def employee_login(request):
                                                    login_password=password).get()
 
         except ObjectDoesNotExist:
-            response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+            response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                       + ". Staff's account validation failed. SL(2)"
 
             return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -388,9 +387,9 @@ def employee_login(request):
 
 def create_country(request):
     """
-    Create Country
-    :param request:
-    :return: HttpResponse object
+        Create Country
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a Country ****')
@@ -412,8 +411,8 @@ def create_country(request):
     except ObjectDoesNotExist:
         print("Country check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
-                                      + ".Country validation check failed. CC(1)"
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
+                                  + ".Country validation check failed. CC(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
 
@@ -453,9 +452,9 @@ def create_country(request):
 
 def get_countries(request, return_type):
     """
-    Get list of Countries
-    :param request:
-    :return:
+        Get list of Countries
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Countries ****')
@@ -495,9 +494,9 @@ def get_countries(request, return_type):
 
 def create_city(request):
     """
-    Create City
-    :param request:
-    :return: HttpResponse object
+        Create City
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a City ****')
@@ -519,8 +518,8 @@ def create_city(request):
     except ObjectDoesNotExist:
         print("City check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
-                                      + ".City validation check failed. CC2(1)"
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
+                                  + ".City validation check failed. CC2(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
 
@@ -567,10 +566,9 @@ def create_city(request):
 
 def get_cities(request, return_type):
     """
-
-    :param request:
-    :param return_type:
-    :return:
+        Get list of Cities
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Cities ****')
@@ -589,7 +587,7 @@ def get_cities(request, return_type):
                 response_data.setdefault(str(i), data[i].get('city_name'))
 
             print('Len: ', len(response_data))  # Sanity check
-            print("Loop end")   # Sanity check
+            print("Loop end")  # Sanity check
             # print(response_data)    # Sanity check
 
             if return_type == 'HTTP':
@@ -610,9 +608,9 @@ def get_cities(request, return_type):
 
 def create_area(request):
     """
-    Create Area
-    :param request:
-    :return: HttpResponse object
+        Create Area
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create an Area ****')
@@ -634,7 +632,7 @@ def create_area(request):
     except ObjectDoesNotExist:
         print("Area check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ".Area validation check failed. CA(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -682,10 +680,9 @@ def create_area(request):
 
 def get_areas(request, return_type):
     """
-
-    :param request:
-    :param return_type:
-    :return:
+        Get list of Areas
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Areas ****')
@@ -726,9 +723,9 @@ def get_areas(request, return_type):
 
 def create_device(request):
     """
-    Create Device
-    :param request:
-    :return: HttpResponse object
+        Create Device
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a Device ****')
@@ -793,9 +790,9 @@ def create_device(request):
 
 def get_devices(request, return_type):
     """
-    Get list of Devices
-    :param request:
-    :return:
+        Get list of Devices
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Devices ****')
@@ -837,9 +834,9 @@ def get_devices(request, return_type):
 def create_device_config(request):
     """
         Create Device Configuration
-        :param request:
+        :param: request
         :return: HttpResponse object
-        """
+    """
 
     print('*** Create a Device Configuration ****')
     response_data = {}
@@ -891,7 +888,7 @@ def create_device_config(request):
     except ObjectDoesNotExist:
         print("Device Configuration check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Device Configuration validation check failed. CDC(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -899,9 +896,9 @@ def create_device_config(request):
 
 def get_devices_configuration(request, return_type):
     """
-    Get list of Devices Configuration
-    :param request:
-    :return:
+        Get list of Devices Configuration
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Devices Configuration ****')
@@ -918,13 +915,13 @@ def get_devices_configuration(request, return_type):
 
             for i in range(len(data)):
                 response_data.setdefault(str(i), (data[i].get('device_config_id') + " - "
-                                         + data[i].get('manufactured_year')
-                                         + " - " + data[i].get('extra_info')))
+                                                  + data[i].get('manufactured_year')
+                                                  + " - " + data[i].get('extra_info')))
                 # response_data.setdefault(str(i), data[i].get('device_config_id'))
 
             print('Response length: ', len(response_data))  # Sanity check
-            print("**************")    # Sanity check
-            print(response_data)    # Sanity check
+            print("**************")  # Sanity check
+            print(response_data)  # Sanity check
 
             if return_type == 'HTTP':
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -946,9 +943,9 @@ def get_devices_configuration(request, return_type):
 
 def create_cluster_type(request):
     """
-    Create Cluster Type
-    :param request:
-    :return: HttpResponse object
+        Create Cluster Type
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a Cluster Type ****')
@@ -1011,9 +1008,9 @@ def create_cluster_type(request):
 
 def get_cluster_types(request, return_type):
     """
-    Get list of Cluster Types
-    :param request:
-    :return:
+        Get list of Cluster Types
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Cluster Types ****')
@@ -1055,9 +1052,9 @@ def get_cluster_types(request, return_type):
 def create_cluster_setup(request):
     """
         Create Cluster Setup
-        :param request:
+        :param: request
         :return: HttpResponse object
-        """
+    """
 
     print('*** Create a Cluster Setup ****')
     response_data = {}
@@ -1079,7 +1076,8 @@ def create_cluster_setup(request):
         print("Area check pass")
         print(area_data)
 
-        cluster_type_data = ClusterTypes.objects.filter(cluster_location_type=cluster_location_type).values('cluster_type_id')
+        cluster_type_data = ClusterTypes.objects.filter(cluster_location_type=cluster_location_type).values(
+            'cluster_type_id')
         print("Cluster Type check pass")
         print(cluster_type_data)
 
@@ -1103,7 +1101,7 @@ def create_cluster_setup(request):
 
             # Create Cluster Setup
             cluster_setup_data = ClustersSetup(area=Areas.objects.get(area_id=area_id),
-                                               cluster_type=ClusterTypes.objects.get(cluster_type_id=cluster_type_id)   ,
+                                               cluster_type=ClusterTypes.objects.get(cluster_type_id=cluster_type_id),
                                                cluster_location_detail=cluster_location_detail,
                                                cluster_exposure=cluster_exposure, cluster_status=cluster_status,
                                                last_modified_user=login_email)
@@ -1130,7 +1128,7 @@ def create_cluster_setup(request):
     except ObjectDoesNotExist:
         print("Cluster Setup check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Cluster Setup validation check failed. CCS(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1138,9 +1136,9 @@ def create_cluster_setup(request):
 
 def get_active_cluster_setup(request, return_type):
     """
-    Get list of Active Cluster Setup
-    :param request:
-    :return: HttpResponse object
+        Get list of Active Cluster Setup
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Active Cluster Setup ****')
@@ -1151,7 +1149,7 @@ def get_active_cluster_setup(request, return_type):
     # Get Cluster Setup
     try:
         data_check = ClustersSetup.objects.filter(Q(cluster_status=active_cluster_status) |
-                                                  Q(cluster_status=unused_cluster_status))\
+                                                  Q(cluster_status=unused_cluster_status)) \
             .values('cluster_location_detail')
         print(str(data_check))
 
@@ -1164,7 +1162,7 @@ def get_active_cluster_setup(request, return_type):
                 response_data.setdefault(str(i), (data[i].get('cluster_location_detail')))
 
             print('Response length: ', len(response_data))  # Sanity check
-            print(response_data)    # Sanity check
+            print(response_data)  # Sanity check
 
             if return_type == 'HTTP':
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1186,9 +1184,9 @@ def get_active_cluster_setup(request, return_type):
 
 def get_cluster_setup(request, return_type):
     """
-    Get list of Cluster Setup
-    :param request:
-    :return: HttpResponse object
+        Get list of Cluster Setup
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Cluster Setup ****')
@@ -1204,15 +1202,10 @@ def get_cluster_setup(request, return_type):
             data = list(data_check)
 
             for i in range(len(data)):
-                # response_data.setdefault(str(i), (data[i]))
                 response_data.setdefault(str(i), (data[i].get('cluster_location_detail')))
-                #                                   + " - " + data[i].get('cluster_location_detail')
-                #                                   + " - " + data[i].get('cluster_exposure')
-                #                                   + " - " + data[i].get('cluster_status')))
-                # response_data.setdefault(str(i), data[i].get('device_config_id'))
 
             print('Response length: ', len(response_data))  # Sanity check
-            print(response_data)    # Sanity check
+            print(response_data)  # Sanity check
 
             if return_type == 'HTTP':
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1235,9 +1228,9 @@ def get_cluster_setup(request, return_type):
 def create_cluster_network_config(request):
     """
         Create Cluster Network Configuration
-        :param request:
+        :param: request
         :return: HttpResponse object
-        """
+    """
 
     print('*** Create a Cluster Network Configuration ****')
     response_data = {}
@@ -1253,7 +1246,7 @@ def create_cluster_network_config(request):
 
     # Check if Cluster Setup already exist in Cluster Network Configuration table
     try:
-        cluster_setup_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup)\
+        cluster_setup_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup) \
             .values('cluster_setup_id')
         print("Cluster Network Configuration check pass")
         print(cluster_setup_data)
@@ -1295,7 +1288,7 @@ def create_cluster_network_config(request):
     except ObjectDoesNotExist:
         print("Cluster Network Configuration check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Cluster Network Configuration validation check failed. CCNCS(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1303,9 +1296,9 @@ def create_cluster_network_config(request):
 
 def get_cluster_network_config(request, return_type):
     """
-    Get list of Cluster Network Configuration
-    :param request:
-    :return: HttpResponse object
+        Get list of Cluster Network Configuration
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Cluster Network Configuration ****')
@@ -1324,7 +1317,7 @@ def get_cluster_network_config(request, return_type):
                 response_data.setdefault(str(i), (data[i].get('cluster_network_provider')))
 
             print('Response length: ', len(response_data))  # Sanity check
-            print(response_data)    # Sanity check
+            print(response_data)  # Sanity check
 
             if return_type == 'HTTP':
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1346,9 +1339,9 @@ def get_cluster_network_config(request, return_type):
 
 def create_content_type(request):
     """
-    Create Content Type
-    :param request:
-    :return: HttpResponse object
+        Create Content Type
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a Content Type ****')
@@ -1410,9 +1403,9 @@ def create_content_type(request):
 
 def get_content_types(request, return_type):
     """
-    Get list of Content Types
-    :param request:
-    :return:
+        Get list of Content Types
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Content Types ****')
@@ -1455,9 +1448,9 @@ def get_content_types(request, return_type):
 
 def create_client_profile(request):
     """
-    Create Client Profile
-    :param request:
-    :return: HttpResponse object
+        Create Client Profile
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a Client Profile ****')
@@ -1524,9 +1517,9 @@ def create_client_profile(request):
 
 def get_client_profile(request, return_type):
     """
-    Get list of Client Profile
-    :param request:
-    :return:
+        Get list of Client Profile
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Client Profiles ****')
@@ -1567,9 +1560,9 @@ def get_client_profile(request, return_type):
 
 def create_content_setup_data_contract(request):
     """
-    Create Content Setup
-    :param request:
-    :return: HttpResponse object
+        Create Content Setup
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Create a Content Setup ****')
@@ -1624,7 +1617,7 @@ def create_content_setup_data_contract(request):
 
         # Check if Content Setup exist
         content_setup_check = ContentsSetupDataContract.objects.filter(Q(content_type=content_type_id,
-                                                                       content_title=content_title) |
+                                                                         content_title=content_title) |
                                                                        Q(content_title=content_title))
         # If Content Setup record not found
         if not content_setup_check:
@@ -1665,7 +1658,7 @@ def create_content_setup_data_contract(request):
     except ObjectDoesNotExist:
         print("Content Setup check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Content Setup validation check failed. CCS2(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1673,9 +1666,9 @@ def create_content_setup_data_contract(request):
 
 def get_active_content_setup_data_contract(request, return_type):
     """
-    Get list of Active Content Setup, data, contract etc
-    :param request:
-    :return:
+        Get list of Active Content Setup, data, contract etc
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Active Content Setup ****')
@@ -1719,9 +1712,9 @@ def get_active_content_setup_data_contract(request, return_type):
 
 def get_content_setup_data_contract(request, return_type):
     """
-    Get list of Content Setup, data, contract etc
-    :param request:
-    :return:
+        Get list of Content Setup, data, contract etc
+        :param: request
+        :return: HttpResponse object
     """
 
     print('*** Get Content Setup ****')
@@ -1765,9 +1758,9 @@ def get_content_setup_data_contract(request, return_type):
 def create_active_cluster_and_devices(request):
     """
         Create and assign an Active Cluster with Devices
-        :param request:
+        :param: request
         :return: HttpResponse object
-        """
+    """
 
     print('*** Create an Active Cluster with Devices ****')
     # Variable declarations
@@ -1775,7 +1768,7 @@ def create_active_cluster_and_devices(request):
     status_check = ['ACTIVE', 'DEACTIVATED']
 
     # Get session name
-    #session_name = request.POST.get('sessionName')
+    # session_name = request.POST.get('sessionName')
 
     # Get form fields data
     login_email = request.POST.get('loginEmail').upper()
@@ -1853,7 +1846,7 @@ def create_active_cluster_and_devices(request):
     except ObjectDoesNotExist:
         print("Active Cluster and Device Setup check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Active Cluster and Device Setup validation check failed. CACAD(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1862,9 +1855,9 @@ def create_active_cluster_and_devices(request):
 def create_active_cluster_and_contents(request):
     """
         Create and assign an Active Cluster with Content for display
-        :param request:
+        :param: request
         :return: HttpResponse object
-        """
+    """
 
     print('*** Create an Active Cluster with Content for display ****')
     # Variable declarations
@@ -1966,7 +1959,7 @@ def create_active_cluster_and_contents(request):
     except ObjectDoesNotExist:
         print("Active Cluster and Content Setup check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Active Cluster and Content Setup validation check failed. CACC(1)"
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -1976,7 +1969,7 @@ def create_active_cluster_and_contents(request):
 def get_active_cluster_and_devices(request, return_type):
     """
     Get list of Active Cluster, Content and Device Setup
-    :param request:
+    :param: request
     :return: HttpResponse object
     """
 
@@ -1997,7 +1990,7 @@ def get_active_cluster_and_devices(request, return_type):
                 response_data.setdefault(str(i), (data[i].get('cluster_location_detail')))
 
             print('Response length: ', len(response_data))  # Sanity check
-            print(response_data)    # Sanity check
+            print(response_data)  # Sanity check
 
             if return_type == 'HTTP':
                 return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -2020,7 +2013,7 @@ def get_active_cluster_and_devices(request, return_type):
 def fetch_cluster_details(request):
     """
         Fetch Cluster Details
-        :param request:
+        :param: request
         :return: HttpResponse object
     """
 
@@ -2040,8 +2033,8 @@ def fetch_cluster_details(request):
 
     # Start Active Cluster detail search
     try:
-        # Find Active Cluster details
-        cluster_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup)\
+        # Get Active Cluster details
+        cluster_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup) \
             .values('cluster_status', 'cluster_location_detail', 'cluster_exposure',
                     'cluster_type__cluster_location_type', 'cluster_type__last_modified_user')
 
@@ -2050,14 +2043,16 @@ def fetch_cluster_details(request):
         response_data['Cluster Detail'] = list(cluster_data)
         # print(response_data)
 
-        device_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup)\
+        # Get Active Cluster devices and details
+        device_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup) \
             .values('ActiveClusterAndDevice__device__device_mac_address',
                     'ActiveClusterAndDevice__device__device_status',
                     'ActiveClusterAndDevice__last_modified_user')
         response_data['Devices'] = list(device_data)
         # print(response_data)
 
-        content_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup)\
+        # Get Active Cluster content details
+        content_data = ClustersSetup.objects.filter(cluster_location_detail=cluster_setup) \
             .values('ActiveClusterAndContent__content_setup__content_type__content_type_name',
                     'ActiveClusterAndContent__content_setup__content_title',
                     'ActiveClusterAndContent__content_setup__content_data',
@@ -2082,7 +2077,7 @@ def fetch_cluster_details(request):
             file_name = key.get('ActiveClusterAndContent__content_setup__content_data')
             key['ActiveClusterAndContent__content_setup__content_data'] = content_dir + file_name
 
-        print("***********************-------------------+++++++++++++++++++++++++")
+        print("++++++++++++++++++++++++--------END OF CONTENTS LOOP -------+++++++++++++++++++++++++")
         print(response_data)
 
         return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -2090,14 +2085,14 @@ def fetch_cluster_details(request):
     except ObjectDoesNotExist:
         print("Fetch Cluster Details check failed")
 
-        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+        response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                   + ". Fetch Cluster Details validation check failed. FCD(1)"
 
 
 def device_request(request):
     """
-        Fetch Device media contents for devices
-        :param request:
+        Fetch Device contents for display
+        :param: request
         :return: HttpResponse object
     """
 
@@ -2137,7 +2132,7 @@ def device_request(request):
             except ObjectDoesNotExist:
                 print("Fetch Device media contents for devices check failed")
 
-                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure)\
+                response_data['result'] = "ERROR Status: " + str(ObjectDoesNotExist.silent_variable_failure) \
                                           + ". Fetch Device media contents for devices validation check failed. DR(1)"
 
 
@@ -2153,7 +2148,7 @@ def show_contents_data(request):
 
         print("Queries:")
         print(connection.queries)
-    #
+        #
         return render(request, 'pages/dashboardTest.html', context)
 
 
